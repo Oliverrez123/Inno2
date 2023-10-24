@@ -9,14 +9,16 @@ import GlobalStyles from '../globalStyling/GlobalStyles';
 
 
 
-
+//oprettelse af funktionalitet i cameraviewet, taget fra øvelsestime
 
 const OpslagView = ({ navigation }) => {
     const cameraRef = useRef();
     const [hasPermission, setHasPermission] = useState(null);
+
     const [imagesArr, setImagesArr] = useState([]);
     const [type, setType] = useState(Camera.Constants.Type.back);
     const [loading, setLoading] = useState(false);
+
 
     useEffect(() => {
         (async () => {
@@ -63,6 +65,9 @@ const OpslagView = ({ navigation }) => {
     const CameraGallery = () => {
         return (
             <View style={GlobalStyles.gallery}>
+
+
+                
                 <Text style={GlobalStyles.buttonGallery}>Billeder taget: {imagesArr.length}</Text>
                 <ScrollView horizontal={true}>
                     {
